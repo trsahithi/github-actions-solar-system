@@ -5,7 +5,11 @@ on:
   push:
     branches:
       - main
-      - 'feature/*'
+      - feature/*
+env:
+  MONGO_URI: mongodb+srv://supercluster.d83jj.mongodb.net/superData
+  MONGO_USERNAME: superuser
+  MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}      
     
 jobs:
     unit-testing:
@@ -31,3 +35,4 @@ jobs:
           with:
             name: Mocha-Test-Result
             path: test-results.xml
+
