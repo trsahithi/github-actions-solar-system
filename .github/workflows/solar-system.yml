@@ -56,7 +56,7 @@ jobs:
           run: npm install
     
         - name: Run Code-coverage command
-          run: npm run code-coverage  
+          run: npm run test 
           
         - uses: actions/upload-artifact@v4
           with:
@@ -81,6 +81,6 @@ jobs:
         context: .
         push: true
         tags: 'ghcr.io/${{ github.repository_owner }}/solar-system:${{ github.sha }}'
-        
+
 
 
