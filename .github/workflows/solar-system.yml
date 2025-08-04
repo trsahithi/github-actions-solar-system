@@ -50,8 +50,9 @@ jobs:
           with:
             path: ~/.npm
             key: '${{ runner.os }}-node-modules-${{ hashFiles(''package-lock.json'') }}'
+
         - name: Install Dependencies
-        - continue-on-error: true
+          continue-on-error: true
           run: npm install
     
         - name: Run Code-coverage command
